@@ -17,13 +17,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Patrick Bradley - Video Blogger & Filmmaker",
+  title: "Pradeep - web developer & student",
   description:
     "Professional filmmaker and content creator specializing in compelling visual storytelling, documentaries, and commercial video production.",
   keywords: "filmmaker, video blogger, content creator, documentary, commercial video, Los Angeles",
-  authors: [{ name: "Patrick Bradley" }],
+  authors: [{ name: "Pradeep" }],
   openGraph: {
-    title: "Patrick Bradley - Video Blogger & Filmmaker",
+    title: "Pradeep - web developer & student",
     description: "Professional filmmaker and content creator specializing in compelling visual storytelling.",
     type: "website",
   },
