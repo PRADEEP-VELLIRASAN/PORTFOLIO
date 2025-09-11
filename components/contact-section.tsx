@@ -213,7 +213,7 @@ export default function ContactSection() {
                   rows={5}
                   disabled={state.submitting}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
-                  placeholder="Tell me about your project or idea..."
+                  placeholder="Type your message here..."
                 />
                 <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
