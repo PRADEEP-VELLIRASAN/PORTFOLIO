@@ -11,25 +11,40 @@ import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false)
+  // Default to dark mode
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme")
-    if (savedTheme === "dark") {
+
+    if (savedTheme) {
+      if (savedTheme === "dark") {
+        setDarkMode(true)
+        document.documentElement.classList.add("dark")
+      } else {
+        setDarkMode(false)
+        document.documentElement.classList.remove("dark")
+      }
+    } else {
+      // No saved theme → force dark mode
       setDarkMode(true)
       document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
     }
   }, [])
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-    if (!darkMode) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    }
+    setDarkMode((prev) => {
+      const newMode = !prev
+      if (newMode) {
+        document.documentElement.classList.add("dark")
+        localStorage.setItem("theme", "dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+        localStorage.setItem("theme", "light")
+      }
+      return newMode
+    })
   }
 
   return (
