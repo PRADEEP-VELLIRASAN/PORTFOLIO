@@ -30,9 +30,7 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
       const scrollPosition = window.scrollY
       setIsScrolled(scrollPosition > 50)
 
-      // Find the active section based on scroll position
       const sections = navItems.map((item) => item.href.substring(1))
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i])
         if (section) {
@@ -46,8 +44,7 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Call once to set initial state
-
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -58,24 +55,6 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
     }
     setIsMenuOpen(false)
   }
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const nav = document.getElementById("mobile-nav")
-      if (nav && !nav.contains(event.target as Node)) {
-        setIsMenuOpen(false)
-      }
-    }
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [isMenuOpen])
 
   return (
     <>
@@ -100,11 +79,11 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
-              <span className="hidden xs:block sm:block">Pradeep V</span>
-              <span className="xs:hidden sm:hidden">PV</span>
+              <span className="hidden sm:block">Pradeep V</span>
+              <span className="sm:hidden">PV</span>
             </motion.div>
 
-            {/* Desktop Navigation with Dynamic Pill */}
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-1 bg-gray-100/50 dark:bg-gray-800/50 rounded-full p-1 backdrop-blur-sm">
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
@@ -133,7 +112,7 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
 
             {/* Right side buttons */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              {/* Dark mode toggle */}
+              {/* Dark mode toggle (always visible on desktop) */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -170,25 +149,25 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 lg:hidden"
+          >
             {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+            <div
+              className="absolute inset-0 bg-black/20 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
             />
 
             {/* Mobile Menu */}
             <motion.div
-              id="mobile-nav"
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="fixed top-14 sm:top-16 left-4 right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 lg:hidden overflow-hidden"
+              className="absolute top-14 sm:top-16 left-4 right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"
             >
               <div className="py-4">
                 {navItems.map((item, index) => (
@@ -217,64 +196,23 @@ export default function Navigation({ darkMode, toggleDarkMode }: NavigationProps
                   </motion.button>
                 ))}
 
-                {/* Mobile Connect Button */}
-                <div className="px-6 pt-4 border-t border-gray-200 dark:border-gray-700 mt-2">
+                {/* Dark mode toggle inside mobile menu */}
+                <div className="px-6 pt-2">
                   <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => scrollToSection("#contact")}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium transition-all duration-200 flex items-center justify-center space-x-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={toggleDarkMode}
+                    className="w-full flex items-center justify-center px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   >
-                    <span>Let's Connect</span>
+                    {darkMode ? <Sun className="mr-2 h-4 w-4" /> : <Moon className="mr-2 h-4 w-4" />}
+                    <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
                   </motion.button>
                 </div>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Mobile Bottom Navigation */}
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="fixed bottom-4 left-4 right-4 lg:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg z-40"
-      >
-        <div className="flex items-center justify-around py-2 px-2">
-          {navItems.slice(0, 5).map((item) => {
-            const isActive = activeSection === item.href.substring(1)
-            return (
-              <motion.button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                whileTap={{ scale: 0.9 }}
-                className={`relative flex flex-col items-center p-2 rounded-xl transition-all duration-200 min-w-0 flex-1 ${
-                  isActive ? "text-blue-600 dark:text-blue-400" : "text-gray-500 dark:text-gray-400"
-                }`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="mobileActiveSection"
-                    className="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 rounded-xl"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10 text-xs font-medium truncate w-full text-center">
-                  {item.name === "Achievements" ? "Awards" : item.name === "Education" ? "Edu" : item.name}
-                </span>
-                {isActive && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="w-1 h-1 bg-blue-500 rounded-full mt-1"
-                  />
-                )}
-              </motion.button>
-            )
-          })}
-        </div>
-      </motion.div>
     </>
   )
 }
