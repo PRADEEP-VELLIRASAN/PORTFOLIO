@@ -263,14 +263,6 @@ export default function ProjectsSection() {
                       <Github className="w-4 h-4" />
                       <span>View Code</span>
                     </motion.a>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center space-x-2 px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-full font-medium hover:bg-blue-500 hover:text-white transition-all duration-200"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>Live Demo</span>
-                    </motion.button>
                   </div>
                 </div>
               </div>
