@@ -3,9 +3,10 @@ import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({
+const inter = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 })
 
@@ -20,14 +21,16 @@ export const metadata: Metadata = {
   title: "Pradeep - web developer & student",
   description:
     "Professional filmmaker and content creator specializing in compelling visual storytelling, documentaries, and commercial video production.",
-  keywords: "filmmaker, video blogger, content creator, documentary, commercial video, Los Angeles",
+  keywords:
+    "filmmaker, video blogger, content creator, documentary, commercial video, Los Angeles",
   authors: [{ name: "Pradeep" }],
   openGraph: {
     title: "Pradeep - web developer & student",
-    description: "Professional filmmaker and content creator specializing in compelling visual storytelling.",
+    description:
+      "Professional filmmaker and content creator specializing in compelling visual storytelling.",
     type: "website",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -37,7 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body
+        className={`${inter.className} ${poppins.className} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
