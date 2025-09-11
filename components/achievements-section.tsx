@@ -191,6 +191,12 @@ export default function AchievementsSection() {
               whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium transition-all duration-200"
+              onClick={() => {
+                const contactSection = document.getElementById("contact")
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" })
+                }
+              }}
             >
               Let's Collaborate
             </motion.button>
