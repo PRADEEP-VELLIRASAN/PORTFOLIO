@@ -109,7 +109,7 @@ export default function ProjectsSection() {
       description:
         "An innovative IoT-based air pollution monitoring system that provides real-time air quality data with smart sensors, data analytics, and mobile alerts. Winner of First Prize in inter-college competition for its practical implementation and environmental impact.",
       technologies: ["IoT", "Arduino", "React", "Node.js", "MongoDB", "Sensor Integration"],
-      github: "https://github.com/PRADEEP-VELLIRASAN/Air-Pollution-Monitor",
+      github: "https://github.com/PRADEEP-VELLIRASAN/Air-Quality-Monitor_DEVFORGE_HACKATHON_PROJECT",
       images: [
         "https://blogger.googleusercontent.com/img/a/AVvXsEjJLXnW5BZO9zpBE_A3yx4PF2JNtRnsebhgc6u75K_401KZeMZ7TC1z4bJZrNTm4tb4W_9SxS-r0qzc1Yjg5I41pT5CwYPClSoCEgSyg6di9ltqpoTMIJMtSwETiAFYZL81aE3swML86M52gmBtLCpIt2HgGKy2uySde6mMJmpkUCwfZfK6yjIazVQurG4",
         "https://blogger.googleusercontent.com/img/a/AVvXsEhE9sXC7z4YL4JA2JKDDLkO8pOFVmaiYaqCGCMvw0Soup0hf0XzNvqKNpRooGKO8GWdk9ayCBGTeGozCfyKOtOMnQxny6BCk9v5Mtmo-Z9qA-SyNYmURoWps9pvAutucyDZPU-2aEhyHwtzvEi_8mt6828vqauxl1axEDyW8uDRRfHLe1JAkDLje0N52fc",
