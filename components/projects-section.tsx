@@ -77,15 +77,17 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
         <ChevronRight className="w-4 h-4" />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+      {/* Line indicators below image */}
+      <div className="flex w-full mt-3 gap-2 justify-center">
         {images.map((_, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => setCurrentImage(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-              index === currentImage ? "bg-white" : "bg-white/50"
+            className={`h-1 rounded transition-all duration-300 cursor-pointer flex-1 ${
+              index === currentImage
+                ? "bg-gradient-to-r from-blue-500 to-purple-500"
+                : "bg-gray-300 dark:bg-gray-700"
             }`}
+            onClick={() => setCurrentImage(index)}
             aria-label={`Go to image ${index + 1}`}
           />
         ))}
