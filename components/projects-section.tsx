@@ -45,35 +45,11 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
     }
   }, [isActive, isMobile, images.length])
 
-  // Desktop: horizontal scroll, Mobile: carousel
-  if (!isMobile && images.length > 1) {
-    return (
-      <div className="relative">
-        <div className="flex overflow-x-auto gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100 py-2 px-1 lg:h-64">
-          {images.map((img, idx) => (
-            <Image
-              key={img}
-              src={img || "/placeholder.svg"}
-              alt={`${title} - Image ${idx + 1}`}
-              width={400}
-              height={300}
-              className="h-64 w-auto object-cover rounded-xl flex-shrink-0 transition-all duration-300"
-            />
-          ))}
-        </div>
-        {/* Counter */}
-        <div className="absolute top-2 right-2 px-2 py-1 bg-black/50 text-white text-xs rounded">
-          {images.length} images
-        </div>
-      </div>
-    )
-  }
-  // Mobile: keep carousel
   return (
     <div
       className="relative"
-      onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
+      onMouseEnter={() => setIsActive(true)}  // start scrolling when mouse over
+      onMouseLeave={() => setIsActive(false)} // stop when mouse leaves
     >
       <Image
         src={images[currentImage] || "/placeholder.svg"}
@@ -82,6 +58,7 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
         height={300}
         className="w-full h-64 object-cover transition-all duration-300"
       />
+
       {/* Prev button */}
       <button
         onClick={prevImage}
@@ -90,6 +67,7 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
       >
         <ChevronLeft className="w-4 h-4" />
       </button>
+
       {/* Next button */}
       <button
         onClick={nextImage}
@@ -98,6 +76,7 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
       >
         <ChevronRight className="w-4 h-4" />
       </button>
+
       {/* Dots */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
         {images.map((_, index) => (
@@ -111,6 +90,7 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
           />
         ))}
       </div>
+
       {/* Counter */}
       <div className="absolute top-2 right-2 px-2 py-1 bg-black/50 text-white text-xs rounded">
         {currentImage + 1} / {images.length}
