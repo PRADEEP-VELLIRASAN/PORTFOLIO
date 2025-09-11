@@ -6,7 +6,7 @@ import { Target, Users, Lightbulb, Trophy } from "lucide-react"
 export default function AboutSection() {
   const highlights = [
     {
-      icon: Target,
+      icon: Target ,
       title: "Career Objective",
       description:
         "Contributing knowledge and growing with teams while embracing opportunities to acquire new skills and overcome challenges.",
