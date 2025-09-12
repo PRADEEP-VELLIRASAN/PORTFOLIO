@@ -150,7 +150,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send your Message Here</h3>
 
             {/* Success Message */}
             {state.succeeded && (
