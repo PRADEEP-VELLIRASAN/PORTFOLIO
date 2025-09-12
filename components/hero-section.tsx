@@ -19,7 +19,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900">
+  <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left side - Text content */}
@@ -27,7 +27,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 order-2 lg:order-1"
+            className="flex-1 order-2 lg:order-1 text-center lg:text-left"
           >
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
@@ -58,8 +58,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-gray-500 dark:text-gray-400 mb-6 lg:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed text-base lg:text-lg"
             >
-              Passionate about creating innovative web solutions and contributing to meaningful projects. Currently
-              pursuing B.Tech in Information Technology at Kongu Engineering College.
+              Passionate about creating innovative web solutions and contributing to meaningful projects. Currently pursuing B.Tech in Information Technology at Kongu Engineering College.
             </motion.p>
 
             {/* Contact info - Mobile optimized */}
