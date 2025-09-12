@@ -1,46 +1,36 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 export default function HeroSection() {
+  const [showResumeModal, setShowResumeModal] = useState(false);
   const socialLinks = [
     { icon: Github, href: "https://github.com/PRADEEP-VELLIRASAN", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/pradeep-v", label: "LinkedIn" },
     { icon: Mail, href: "mailto:geethapradeep243@gmail.com", label: "Email" },
-  ]
-
+  ];
   const contactInfo = [
-    { icon: Phone, text: "9344790803", href: "tel:9344790803" },
-    { icon: Mail, text: "geethapradeep243@gmail.com", href: "mailto:geethapradeep243@gmail.com" },
-    { icon: MapPin, text: "Krishnagiri, Tamil Nadu", href: "#" },
-  ]
+    { icon: Phone, href: "tel:+919003234243", text: "+91 90032 34243" },
+    { icon: Mail, href: "mailto:geethapradeep243@gmail.com", text: "geethapradeep243@gmail.com" },
+    { icon: MapPin, href: "https://goo.gl/maps/2Qw8Qw8Qw8Qw8Qw8Q", text: "Erode, Tamil Nadu" },
+  ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center lg:text-left order-2 lg:order-1"
+            transition={{ duration: 0.8 }}
+            className="flex-1 order-2 lg:order-1"
           >
-            {/* Greeting */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="inline-flex items-center px-3 sm:px-4 py-2 bg-blue-50 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
-            >
-              👋 Hello, I'm
-            </motion.div>
-
-            {/* Main heading */}
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-4"
@@ -102,7 +92,8 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 lg:px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium flex items-center justify-center space-x-2 transition-all duration-200 text-sm lg:text-base"
+                className="px-6 lg:px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium flex items-center justify-center space-x-2 transition-all duration-200 text-sm lg:text-base shadow-lg"
+                onClick={() => setShowResumeModal(true)}
               >
                 <Download className="w-4 h-4" />
                 <span>Download Resume</span>
@@ -205,6 +196,33 @@ export default function HeroSection() {
             </div>
           </motion.div>
         </div>
+        {/* Resume Modal Popup - placed just before section end */}
+        {showResumeModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full p-6 relative flex flex-col items-center">
+              <button
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 dark:hover:text-white text-2xl font-bold"
+                onClick={() => setShowResumeModal(false)}
+                aria-label="Close"
+              >
+                &times;
+              </button>
+              <iframe
+                src="/Professional Minimalist CV Resume (1).pdf"
+                title="Resume Preview"
+                className="w-full h-96 border rounded-xl mb-6"
+              />
+              <a
+                href="/Professional Minimalist CV Resume (1).pdf"
+                download
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium flex items-center justify-center space-x-2 transition-all duration-200 text-base shadow-lg"
+              >
+                <Download className="w-5 h-5" />
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
