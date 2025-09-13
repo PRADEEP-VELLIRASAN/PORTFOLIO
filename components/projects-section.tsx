@@ -137,7 +137,6 @@ export default function ProjectsSection() {
         "https://blogger.googleusercontent.com/img/a/AVvXsEiULUT2DyYwIOZSDpdYrwAodGzbkvhGjQ9jHzN1GL2DKzbfWQJrVMgAuDDlwegDF6TWDExdtBGDxn4dS-P95U3U9ZRG_vDL5osofo7ZXAGe9HUb60VLyr-ItfXXWuwSoZ_9SC1m7XyXMNtR2Z82cRVDyn_hsJ5csNaDe2T4SqcGzQJtyOZhZnHmVf1Ii0c",
         "https://blogger.googleusercontent.com/img/a/AVvXsEiNl55lpoH_3KD71ePXLVEICZuXoh2Q3Lm8X7Xox-HoeMTKWuxEDlzquNfUIpnjZ5wN_vL7zUDV5fiuRjjNgj-oED3WVgG9PGSFTvGmc0CxAFwimYBz_NAOX4K0rO3LcTdqfuknjcj5cl91a1cxKuneSwreAatALCPJQpQta4G7JrzZAvwE0eQN2_LRSU0",
         "https://blogger.googleusercontent.com/img/a/AVvXsEiQl29YPwEw7mbKGcgnpWuhf1PrrJu9ZVM2qNSTQjzrlAMXd5xlzyYalPdZnrwJdBEC9apQfesNE6SJbLc9xjCiIkjMryJrmgj57xnokAc0tUtB96skqkKDmNZq94CjZhqZ3MgikwJ0wORHl_CJx2wsJmnaTv_wXs3ysvPWXrGo9GLYpM43gTpUpjBfBVc",
-        "https://blogger.googleusercontent.com/img/a/AVvXsEiQl29YPwEw7mbKGcgnpWuhf1PrrJu9ZVM2qNSTQjzrlAMXd5xlzyYalPdZnrwJdBEC9apQfesNE6SJbLc9xjCiIkjMryJrmgj57xnokAc0tUtB96skqkKDmNZq94CjZhqZ3MgikwJ0wORHl_CJx2wsJmnaTv_wXs3ysvPWXrGo9GLYpM43gTpUpjBfBVc",
         "https://blogger.googleusercontent.com/img/a/AVvXsEgH4RnkkIE77TIglhhao4EAaAiWupBeLGJzQr-SmnVYFGch8BH4gwnO7br8qrdj8J-RIF-tuY63MJfCnv1X9HVDZ0HxJ3pGE9UOJO9D60a1RGgTSeQ53RL5fU0L19OEIKWxEF94GV5wQtVoD5eDrfObHkk0sfONSrEiG_Ac9vDlXy5LrI4I_Vqu3SX8jm4",
       ],
       featured: true,
