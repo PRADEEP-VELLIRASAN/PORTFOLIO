@@ -51,7 +51,7 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
     >
-      <div className="w-full flex justify-center items-center">
+      <div className="relative w-full flex justify-center items-center">
         <Image
           src={images[currentImage] || "/placeholder.svg"}
           alt={`${title} - Image ${currentImage + 1}`}
@@ -61,20 +61,18 @@ const ImageCarousel = ({ images, title }: ImageCarouselProps) => {
           className="w-full h-56 sm:h-64 object-cover rounded-xl transition-all duration-300 mx-auto"
           style={{ maxWidth: '100%', height: 'auto' }}
         />
-      </div>
-
-      {/* Prev/Next buttons for mobile: show below image */}
-      <div className="flex w-full justify-between items-center mt-2 sm:mt-0 sm:absolute sm:left-2 sm:right-2 sm:top-1/2 sm:transform sm:-translate-y-1/2">
+        {/* Prev button (always visible, inside image container) */}
         <button
           onClick={prevImage}
-          className="w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
+        {/* Next button (always visible, inside image container) */}
         <button
           onClick={nextImage}
-          className="w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-all duration-200 z-10"
           aria-label="Next image"
         >
           <ChevronRight className="w-4 h-4" />

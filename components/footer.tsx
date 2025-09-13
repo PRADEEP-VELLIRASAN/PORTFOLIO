@@ -118,13 +118,13 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Pradeep Vellirasan.</p>
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Pradeep V.</p>
           <div className="flex items-center text-gray-400 text-sm">
             <span>Made with</span>
             <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
             <span>and lots of</span>
             <Code2 className="w-4 h-4 mx-1 text-blue-500" />
-            <span>by Pradeep v & Co developed By Sabarivasan sm</span>
+            <span>by Pradeep v</span>
           </div>
         </motion.div>
       </div>
