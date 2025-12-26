@@ -11,7 +11,7 @@ export default function TestimonialsSection() {
       role: "Creative Director",
       company: "Digital Studios",
       content:
-        "Patrick's vision and technical expertise brought our brand story to life in ways we never imagined. His attention to detail and creative approach exceeded all expectations.",
+        "Pradeep's vision and technical expertise brought our brand story to life in ways we never imagined. His attention to detail and creative approach exceeded all expectations.",
       rating: 5,
       avatar: "/placeholder.svg?height=60&width=60",
     },
@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
       role: "Marketing Manager",
       company: "Tech Innovations",
       content:
-        "Working with Patrick was an absolute pleasure. His professionalism and ability to capture our company's essence in video format was remarkable.",
+        "Working with Pradeep was an absolute pleasure. His professionalism and ability to capture our company's essence in video format was remarkable.",
       rating: 5,
       avatar: "/placeholder.svg?height=60&width=60",
     },
@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
       role: "Event Coordinator",
       company: "Global Events",
       content:
-        "Patrick documented our international conference beautifully. The final video perfectly captured the energy and importance of our event.",
+        "Pradeep documented our international conference beautifully. The final video perfectly captured the energy and importance of our event.",
       rating: 5,
       avatar: "/placeholder.svg?height=60&width=60",
     },
