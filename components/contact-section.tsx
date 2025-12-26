@@ -10,8 +10,8 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      value: "9344790803",
-      href: "tel:9344790803",
+      value: "+91 93447 90803",
+      href: "tel:+919344790803",
       color: "from-green-500 to-emerald-500",
     },
     {
