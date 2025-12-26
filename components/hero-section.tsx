@@ -13,7 +13,7 @@ export default function HeroSection() {
     { icon: Mail, href: "mailto:geethapradeep243@gmail.com", label: "Email" },
   ];
   const contactInfo = [
-    { icon: Phone, href: "tel:+919003234243", text: "+91 90032 34243" },
+    { icon: Phone, href: "tel:+919344790803", text: "+91 93447 90803" },
     { icon: Mail, href: "mailto:geethapradeep243@gmail.com", text: "geethapradeep243@gmail.com" },
     { icon: MapPin, href: "https://goo.gl/maps/2Qw8Qw8Qw8Qw8Qw8Q", text: "Erode, Tamil Nadu" },
   ];
