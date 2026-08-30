@@ -10,8 +10,8 @@ export default function EducationSection() {
       field: "Information Technology",
       institution: "Kongu Engineering College",
       duration: "2023 - 2026",
-      grade: "CGPA: 6.68",
-      status: "Currently Pursuing",
+      grade: "CGPA: 6.98",
+      status: "Recently completed",
       icon: "🎓",
       color: "from-blue-500 to-purple-500",
     },
@@ -122,11 +122,11 @@ export default function EducationSection() {
                     </div>
 
                     {/* Progress indicator for current education */}
-                    {edu.status === "Currently Pursuing" && (
+                    {edu.status === "Recently completed" && (
                       <div className="mt-6">
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-gray-600 dark:text-gray-400">Progress</span>
-                          <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">In Progress</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">completed</span>
+                          <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">completed</span>
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <motion.div
@@ -163,7 +163,7 @@ export default function EducationSection() {
             <div className="text-gray-600 dark:text-gray-400">Secondary School</div>
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-xl p-6 text-center shadow-lg border border-gray-100 dark:border-gray-700">
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">6.68</div>
+            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">6.98</div>
             <div className="text-gray-600 dark:text-gray-400">Current CGPA</div>
           </div>
         </motion.div>
