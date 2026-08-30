@@ -124,19 +124,6 @@ export default function EducationSection() {
                     {/* Progress indicator for current education */}
                     {edu.status === "Recently completed" && (
                       <div className="mt-6">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm text-gray-600 dark:text-gray-400">completed</span>
-                          <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">completed</span>
-                        </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: "60%" }}
-                            transition={{ duration: 1, delay: 0.5 }}
-                            viewport={{ once: true }}
-                            className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                          />
-                        </div>
                       </div>
                     )}
                   </div>
