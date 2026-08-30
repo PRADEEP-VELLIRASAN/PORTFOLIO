@@ -15,7 +15,7 @@ export default function HeroSection() {
   const contactInfo = [
     { icon: Phone, href: "tel:+919344790803", text: "+91 93447 90803" },
     { icon: Mail, href: "mailto:geethapradeep243@gmail.com", text: "geethapradeep243@gmail.com" },
-    { icon: MapPin, href: "https://goo.gl/maps/2Qw8Qw8Qw8Qw8Qw8Q", text: "Erode, Tamil Nadu" },
+    { icon: MapPin, href: "https://goo.gl/maps/2Qw8Qw8Qw8Qw8Qw8Q", text: "Krishnagiri, Tamil Nadu" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-6 font-medium"
             >
-              Front-End Developer & Student
+              Front-End Developer
             </motion.p>
 
             {/* Description */}
@@ -58,7 +58,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-gray-500 dark:text-gray-400 mb-6 lg:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed text-base lg:text-lg"
             >
-              Passionate about creating innovative web solutions and contributing to meaningful projects. Currently pursuing B.Tech in Information Technology at Kongu Engineering College.
+              Passionate about creating innovative web solutions and contributing to meaningful projects. Recently Completed B.Tech in Information Technology at Kongu Engineering College.
             </motion.p>
 
             {/* Contact info - Mobile optimized */}
