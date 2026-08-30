@@ -44,7 +44,7 @@ export default function AboutSection() {
             About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A passionate student developer with a strong foundation in front-end development and a drive for innovation
+            A passionate developer with a strong foundation in front-end development and a drive for innovation
           </p>
         </motion.div>
 
