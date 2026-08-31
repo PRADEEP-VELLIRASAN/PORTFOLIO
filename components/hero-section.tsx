@@ -181,7 +181,7 @@ export default function HeroSection() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-teal-500/10" />
                 <Image
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEil7TaNT_7hhH4VmrjTf0aZfjnd1X5hPfETFjNmKMI_5Dq7_tZhMmx7DAPbZfmRYPPtGSAcopp1GE8EoOJhSGdP04ThGFnqFygSL_UgnRs3ZgK07qH2htOBCvgO_oOmk1jTevnvMEuTFoPQNWg-DPdziGWmaKvZHZu3iq1B7qojCweZ0MCGKoIQDkHrSD0"
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcvJcgrqPwSlf2TO5QEeJG6PRYebkwCX_c20wpHJGxM2rFM5RX8ZV72kU4S7OqGGYnae8VPNXLlBskhBuuQcmJ5DvcCWzwdbwJfqY2A33gTehkO4UxozP1LJGR1AVBH7z50IwONp8qJLPZgi25-Kk_8eivDRVaXkn3xtMz8e_1IdEvt_xkYDxlcpI0Aw/s320/1000196129.png"
                   alt="Pradeep Vellirasan"
                   width={400}
                   height={400}
